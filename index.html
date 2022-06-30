@@ -1,0 +1,148 @@
+<body>  
+ 
+    <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+  
+ 
+
+ 
+    
+    <!-- Modal -->
+    <div class="modal fade" id="time_countdown" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        
+            <div class="modal-content main" id="main_id">
+                <div class="modal-header" >
+                    <h2> 
+                       Black friday <span class="special"> Special offer  </span> 
+                     <span class="discount"> 50</span><sup>% </sup>  <span class="off"> OFF </span></h2>
+                      
+                      
+                       
+                    
+             
+                
+                <!-- //raw code target   -->
+               <div class="timer">
+                <div class="timer_inner">
+                    <div class="timer_content">
+                        <div class="days">
+                          
+                            <p id="days">00</p>
+                            <span>Days</span>
+                        </div>
+                        <div class="hours">
+                            <p id="hours">00</p>
+                            <span>Hours</span>
+
+                        </div>
+                        <div class="minutes">
+                            <p id="minutes">00</p>
+                            <span>Munites</span>
+
+                        </div>
+                        <div class="seconds">
+                            <p id="seconds">00</p>
+                            <span>Seconds</span>
+                        </div>
+
+                    </div>
+                </div>
+               </div>
+               <div class="demo_text"> 
+                 <h5> Invest and Get Extra Fund  </h5>
+                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+               </div>
+                  <div class="button">
+                    <div class="button_inner">
+                        <div class="btn1">
+                             
+                            <button type="button" class="btn btn-secondary" id = "btn1" data-dismiss="modal"><span>Close</span></button>
+                    
+                   
+                    
+                            <button type="button" class="btn btn-primary" id="btn2"><a href="https://azeeweb.com/user/add-fund" > <span> Enroll Now ! </span></a></button>
+                            
+                        </div>
+                    </div>
+                  </div>
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+ <div class="news">
+    <iframe src="https://www.prothomalo.com" frameborder="0" width="1920px" height="1080px"></iframe>
+ </div>
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous">
+    </script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+     
+        <script>
+            // show the popup on page reload 
+            $(document).ready(function(){
+                $('#time_countdown').modal('show')
+    
+            })
+          
+    function ClosePopUp(){
+	modal.style.display="none";
+};
+          
+    // to get target date how many days will show the popup
+
+    let offer_show_days = new Date("Jun 30, 2022 00 : 00: 00").getTime();
+
+    let countDownDate = offer_show_days ;
+
+    var x = setInterval(function(){
+    var now = new Date().getTime();
+    var distance = countDownDate - now;
+
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+     
+
+
+//   console.log(days)
+//   console.log(hours)
+//   console.log(minutes)
+//   console.log(seconds)  
+function makeMeTwoDigits(n){
+    return (n < 10 ? "0" : "") + n;
+};
+    //get the countDownDate this passed the data to the document 
+    document.getElementById("days").innerHTML= makeMeTwoDigits(days);
+    document.getElementById("hours").innerHTML = makeMeTwoDigits(hours) ; 
+    document.getElementById("minutes").innerHTML = makeMeTwoDigits(minutes);
+    document.getElementById("seconds").innerHTML = makeMeTwoDigits(seconds);
+    if(distance < 0 ){
+        clearInterval(x);
+    document.getElementById("days").innerHTML="00";
+    document.getElementById("hours").innerHTML="00"; 
+    document.getElementById("minutes").innerHTML="00";
+    document.getElementById("seconds").innerHTML="00";
+    }
+
+
+},1000);
+
+
+
+ 
+        </script>
+        
+ </body>
